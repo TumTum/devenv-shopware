@@ -17,7 +17,6 @@ let
       html_errors = true
       max_execution_time = 60
       max_input_time = 60
-      # assert.active = 0 # ab php 8.3 nicht mehr nötig
       zend.detect_unicode = 0
       opcache.memory_consumption = 256M
       opcache.interned_strings_buffer = 20
