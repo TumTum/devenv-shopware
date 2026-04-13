@@ -77,7 +77,7 @@ in {
         MAILER_URL = lib.mkDefault "smtp://127.0.0.1:${toString cfg.mailhogSmtpPort}?encryption=&auth_mode=";
         MAILER_DSN = lib.mkDefault "smtp://127.0.0.1:${toString cfg.mailhogSmtpPort}?encryption=&auth_mode=";
 
-        APP_URL = lib.mkDefault "http://127.0.0.1:${toString cfg.httpPort}";
+        # loberon # APP_URL = lib.mkDefault "http://127.0.0.1:${toString cfg.httpPort}";
         CYPRESS_baseUrl = lib.mkDefault "http://127.0.0.1:${toString cfg.httpPort}";
 
         SQL_SET_DEFAULT_SESSION_VARIABLES = lib.mkDefault "0";
@@ -102,6 +102,9 @@ in {
       (lib.mkIf config.services.rabbitmq.enable {
         RABBITMQ_NODENAME = "rabbit@localhost"; # 127.0.0.1 can't be used as rabbitmq can't set short node name
         RABBITMQ_NODE_PORT = "${toString cfg.rabbitMqPort}";
+        MESSENGER_TRANSPORT_DSN="amqp://guest:guest@localhost:5672/%2f";
+        MESSENGER_TRANSPORT_LOW_PRIORITY_DSN="amqp://guest:guest@localhost:5672/%2f/low_priority";
+        MESSENGER_TRANSPORT_FAILURE_DSN="amqp://guest:guest@localhost:5672/%2f/failure_dsn";
       })
       (lib.mkIf config.services.redis.enable {
         REDIS_DSN = "redis://127.0.0.1:${toString cfg.redisPort}";

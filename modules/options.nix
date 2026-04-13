@@ -11,7 +11,7 @@ in {
     phpVersion = lib.mkOption {
       type = lib.types.str;
       description = "PHP Version";
-      default = "php81";
+      default = "php83";
     };
 
     systemConfig = lib.mkOption {
