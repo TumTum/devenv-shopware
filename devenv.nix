@@ -25,6 +25,8 @@ in {
       package = lib.mkDefault pkgs.nodejs_20;
     };
 
+    process.manager.implementation = lib.mkDefault "process-compose";
+
     services.redis.enable = lib.mkDefault true;
     services.redis.port = cfg.redisPort;
 
