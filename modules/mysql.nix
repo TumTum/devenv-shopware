@@ -6,7 +6,7 @@ in {
   config = lib.mkIf cfg.enable {
     services.mysql = {
       enable = lib.mkDefault true;
-      package = lib.mkDefault pkgs.mysql80;
+      package = lib.mkDefault pkgs.percona-server_8_0;
       initialDatabases = lib.mkDefault [{ name = "shopware"; }];
       ensureUsers = lib.mkDefault [{
         name = "shopware";
