@@ -84,7 +84,7 @@ in {
 
         SQL_SET_DEFAULT_SESSION_VARIABLES = lib.mkDefault "0";
 
-        APP_SECRET = lib.mkDefault "devsecret";
+        APP_SECRET = lib.mkDefault "2+WytC6nJWPemeqeng3QvYSvQ7ZZgjIOR15dux4HgcQsfGWbtoaXVvwZCO0JkDaWNW32k/Wjw5tWXWnSjlBwAYloGeV2cSjKz/KwAJrliGm2gGNCRrDB4Po7tepsdtUOYh+loIk+";
 
         PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = true;
         DISABLE_ADMIN_COMPILATION_TYPECHECK = true;
